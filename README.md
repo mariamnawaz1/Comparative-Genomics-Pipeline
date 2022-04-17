@@ -1,16 +1,16 @@
 # Team1-ComparativeGenomics
 ## Members
 Kaiqin Bian, Rakin Choudhury, Upaasana Krishnan, Mariam Nawaz, Geetha Priyanka Yerradoddi, Wang Zun
-FastANI:
+##FastANI:
 FastANI is a tool that calculates the fast alignment-free computation of whole-genome Average Nucleotide Identity (ANI). ANI is defined as the mean nucleotide identity of orthologous gene pairs shared between two microbial genomes. FastANI supports pairwise comparison of both complete and draft genome assemblies. 
 Input - Assembled fasta sequences
 Output - ANI matrix, Newark file, Calculated Identity file
 
-Download:
+###Download:
 An easy option to install fastANI in the provided server environment (T1G4_CG2) is conda install.
-CODE: conda install -c bioconda fastANI
+'''conda install -c bioconda fastANI'''
 
-Usage:
+###Usage:
 To know the available command-line options, version, and software usage.
 CODE: ./fastANI -h
 There are many options to run the command on Linux terminal. For more information, you can check the fastANI developers' GitHub page here.
