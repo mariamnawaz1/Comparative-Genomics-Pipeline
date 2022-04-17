@@ -32,11 +32,14 @@ For the phylogenic tree visualization, we need nwk format from the output file o
 Rscript fastANI2tree.R <output_file.out> tree.nwk
 ```
 We can visualize the tree using MEGA software. Output using MEGA software is attached below:
+![fastanimegatree](https://github.gatech.edu/storage/user/57475/files/d9e6708e-7cb3-4f25-9b9a-20e8f7733f7c)
 
 Another way to visualize the tree is using an online GUI website called ETI Toolkit, you can open the website here. Output from this tool is attached below:
+![fastani_etetool](https://github.gatech.edu/storage/user/57475/files/25d1028c-b51b-44c7-a883-1238c0208f46)
+
 For the heatmap visualization, we used the output file from the first fastANI run. 
 ```
 Rscript fastANI_heatmap.R 
 ```
 Heatmap output from the Rscript is attached below:
-
+![fastani_heatmap](https://github.gatech.edu/storage/user/57475/files/5eac5793-dad5-4c4e-83e7-96908b042528)
