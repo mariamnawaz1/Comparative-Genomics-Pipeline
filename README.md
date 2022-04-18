@@ -35,6 +35,7 @@ We can visualize the tree using MEGA software. Output using MEGA software is att
 ![fastanimegatree](https://github.gatech.edu/storage/user/57475/files/d9e6708e-7cb3-4f25-9b9a-20e8f7733f7c)
 
 Another way to visualize the tree is using an online GUI website called ETI Toolkit, you can open the website here. Output from this tool is attached below:
+
 ![fastani_etetool](https://github.gatech.edu/storage/user/57475/files/25d1028c-b51b-44c7-a883-1238c0208f46)
 
 For the heatmap visualization, we used the output file from the first fastANI run. 
