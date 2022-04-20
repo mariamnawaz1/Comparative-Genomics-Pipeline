@@ -45,6 +45,49 @@ Rscript fastANI_heatmap.R
 Heatmap output from the Rscript is attached below:
 ![fastani_heatmap](https://github.gatech.edu/storage/user/57475/files/5eac5793-dad5-4c4e-83e7-96908b042528)
 
+## MUMmer
+MUMmer: An algorithm that can rapidly align large DNA sequences to one another. It can align whole genomes, large genome assemblies, partial genome sequences, and/or a set of reads to a genome.
+
+Dnadiff: A wrapper around nucmer (the primary aligning algorithm used by MUMmer) that’s designed to evaluate the sequence and structural similarity of two highly similar sequence sets. It has multiple output files, but the ‘<filename>.report’ file contains the summary of alignments, differences, and SNPs. 
+
+### Installation:
+We installed MUMmer through conda into our conda environment (T1G4_CG2) on the server:
+``` 
+conda install -c bioconda mummer 
+```
+
+### Usage
+The following is a typical command for dnadiff:
+``` 
+dnadiff genome1.fasta genome2.fasta outfile 
+```
+The ouput consists of multiple files, including a outfile.report file. The 19th line has the 1:1 average identity between the two sequences.  
+
+The Python script used to run dnadiff is designed to search for contigs.fasta from the Genome Assembly group and runs in parallel (given a number of threads to use) to reduce the running time. The script's usage is below:
+``` 
+python dnadiff_module.py input_dir output_dir matrix_filename thread_count
+```
+### Output
+The final output is a txt file of the matrix of average identity between the supplied sequences. This matrix can then be used with software like R to visualize the results through heatmaps and dendrograms. 
+
+For R, run the following commands to generate a heatmap (the pheatmap package is used here, but other heatmap functions can be used as well):
+``` 
+data_frame <- read.table(‘outfile.txt’)
+pheatmap(as.matrix(data_frame)
+```
+The heatmap generated is given below (you can change the fontsize using cex). 20 of the isolates within the red boxes are ones we suspect to be part of an outbreak:
+
+![image](https://github.gatech.edu/storage/user/59643/files/0864f92c-76ed-40f9-8fee-d2d55d66b0a5)
+
+To extract the dendrogram from the heatmap, first save the heatmap as an object and run the following commands:
+``` 
+heatmap1 <- pheatmap(as.matrix(data_frame)
+plot(heatmap1$tree_row, hang=-1)
+```
+The dendrogram generated is given below (you can change the fontsize using cex). 20 of the isolates within the red boxes are ones we suspect to be part of an outbreak:
+
+![image](https://github.gatech.edu/storage/user/59643/files/7fa5c0b1-98c4-4117-8bb1-cc5a2eb9b637)
+
 ## kSNP3.1
 kSNP is a SNP discovery and annotation tool which identifies pan-genome SNPs in a set of genome sequences and estimates phylogenetic trees based on those SNPs. It is based on k-mer analysis and doesn't require a reference genome or multiple sequence alignment. Therefore, it can take 100's of microbial genomes as input and those could be finished or unfinished genomes in assembled or unassembled reads. Finished and unfinished genomes can be analyzed together. For annotation, kSNP automatically download the Genbank files of the finished genomes and incorporate information from those files.
 
