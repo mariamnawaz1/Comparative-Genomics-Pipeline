@@ -75,7 +75,7 @@ For R, run the following commands to generate a heatmap (the pheatmap package is
 data_frame <- read.table(‘outfile.txt’)
 pheatmap(as.matrix(data_frame)
 ```
-The heatmap generated is given below (you can change the fontsize using cex). 20 of the isolates within the red boxes are ones we suspect to be part of an outbreak:
+The heatmap generated is given below (you can change the fontsize using cex). Its clusters were generated using the distance matrix (Euclidean). 20 of the isolates within the red boxes are ones we suspect to be part of an outbreak:
 
 ![image](https://github.gatech.edu/storage/user/59643/files/0864f92c-76ed-40f9-8fee-d2d55d66b0a5)
 
@@ -84,7 +84,7 @@ To extract the dendrogram from the heatmap, first save the heatmap as an object 
 heatmap1 <- pheatmap(as.matrix(data_frame)
 plot(heatmap1$tree_row, hang=-1)
 ```
-The dendrogram generated is given below (you can change the fontsize using cex). 20 of the isolates within the red boxes are ones we suspect to be part of an outbreak:
+The dendrogram generated is given below (you can change the fontsize using cex). The dendrogram's clusters were generated using the distance matrix (Euclidean). 20 of the isolates within the red boxes are ones we suspect to be part of an outbreak:
 
 ![image](https://github.gatech.edu/storage/user/59643/files/7fa5c0b1-98c4-4117-8bb1-cc5a2eb9b637)
 
