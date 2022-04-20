@@ -56,7 +56,7 @@ We installed MUMmer through conda into our conda environment (T1G4_CG2) on the s
 conda install -c bioconda mummer 
 ```
 
-### Usage
+### Usage:
 The following is a typical command for dnadiff:
 ``` 
 dnadiff genome1.fasta genome2.fasta outfile 
@@ -67,7 +67,7 @@ The Python script used to run dnadiff is designed to search for contigs.fasta fr
 ``` 
 python dnadiff_module.py input_dir output_dir matrix_filename thread_count
 ```
-### Output
+### Output & Visualization:
 The final output is a txt file of the matrix of average identity between the supplied sequences. This matrix can then be used with software like R to visualize the results through heatmaps and dendrograms. 
 
 For R, run the following commands to generate a heatmap (the pheatmap package is used here, but other heatmap functions can be used as well):
