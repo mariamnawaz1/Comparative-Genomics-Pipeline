@@ -168,10 +168,11 @@ The output of the tool is captured in a document and it contains information abo
 AMR and Virulence genes identified by AMRfinder
 
 ![image](https://github.gatech.edu/storage/user/56758/files/709a03ec-8940-481e-973d-d0763d359636)
-The first-line treatment for salmonella infections are fluoroquinolones, such as ciprofloxacin, and azithromycin. 
-Third-generation cephalosporins are also effective, and often they are the first antibiotic given if a salmonella infection is suspected but not confirmed.
-S. Typhi rapidly acquires resistance to the antimicrobials that are being used in the community, but can also lose resistance once these drugs are withdrawn.
-Macrolides and Carbapenems are recommended treatments for drug resistant Salmonella infections
+
+Markup : * The first-line treatment for salmonella infections are fluoroquinolones, such as ciprofloxacin, and azithromycin. 
+         * Third-generation cephalosporins are also effective, and often they are the first antibiotic given if a salmonella infection is suspected but not confirmed.
+         * S. Typhi rapidly acquires resistance to the antimicrobials that are being used in the community, but can also lose resistance once these drugs are withdrawn.
+         * Macrolides and Carbapenems are recommended treatments for drug resistant Salmonella infections
 
 ## Recommended Course of Action for the CDC & Other Entities
 
