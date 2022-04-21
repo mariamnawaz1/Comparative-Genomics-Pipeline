@@ -166,3 +166,38 @@ Recommended Antibiotics: Macrolides and Carbapenems are recommended treatments f
 3. Raivo Kolde (2019). pheatmap: Pretty Heatmaps. R package version 1.0.12.https://CRAN.R-project.org/package=pheatmap. 
 4. Four Steps to Food Safety: Clean, Separate, Cook, Chill. Center for Disease Control and Prevention. Last updated March 4, 2022. Accessed April 21, 2022. https://www.cdc.gov/foodsafety/keep-food-safe.html. 
 5. CDC Food Safety Alert: Whole onions identified as the source of large ongoing Salmonella outbreak. Center for Disease Control and Prevention. Last updated October 21, 2021. Accessed April 21, 2022. https://www.cdc.gov/media/releases/2021/s1020-food-safety-salmonella.html.
+  
+## AMRfinder
+
+![image](https://github.gatech.edu/storage/user/56758/files/f73bbbc7-abee-4958-b259-e713864c47a2)
+
+This software and the accompanying database identify acquired antimicrobial resistance genes in bacterial protein and/or assembled nucleotide sequences as well as known resistance-associated point mutations for several taxa. With AMRFinderPlus we added select members of additional classes of genes such as virulence factors, biocide, heat, acid, and metal resistance genes.
+
+### Installation:
+We installed AMRfinder through conda into our conda environment (T1G4_CG2) on the server. The prerequisites BLAST+, HMMER, and libcurl are included in the conda installation.
+``` 
+conda install -y -c bioconda -c conda-forge ncbi-amrfinderplus 
+```
+
+### Usage:
+The following is a typical command for amrfinder:
+``` 
+amrfinder -n contigs.fasta --plus  --organism Salmonella > amr_out.txt 
+```
+
+### Output
+The output of the tool is captured in a document and it contains information about the AMR and virulent genes identified
+
+![image](https://github.gatech.edu/storage/user/56758/files/76efa9a4-e8aa-427d-8d2f-1c77490b73ec)
+
+AMR and Virulence genes identified by AMRfinder
+
+![image](https://github.gatech.edu/storage/user/56758/files/709a03ec-8940-481e-973d-d0763d359636)
+
+The first-line treatment for salmonella infections are fluoroquinolones, such as ciprofloxacin, and azithromycin. 
+Third-generation cephalosporins are also effective, and often they are the first antibiotic given if a salmonella infection is suspected but not confirmed.
+S. Typhi rapidly acquires resistance to the antimicrobials that are being used in the community, but can also lose resistance once these drugs are withdrawn.
+Macrolides and Carbapenems are recommended treatments for drug resistant Salmonella infections
+
+
+
