@@ -141,3 +141,28 @@ Phylogenetic tree using the Maximum likelihood method. The internal nodel labels
 
 Phylogenetic tree using the Neighbor joining method:
 ![tree_tipAlleleCounts.NJ](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/tree_tipAlleleCounts.NJ.png)
+  
+## Recommended Course of Action for the CDC & Other Entities
+
+For the CDC:
+1. Trace the source of the suspected item(s) to their distributors and investigate the storage/distribution centers of their locations (California, Oregon, & Washington). Test for Salmonella.
+2. Based on the tests' results, issue a recall on any batches that are suspected/confirmed to be contaminated. 
+3. Post guidelines to restaurants, grocery stores, and other entities as well as individuals to prevent further purchases of affected item(s) and the proper steps in handling them.
+4. Temporarily shut down affected center(s) and undergo steps the clean the area of Salmonella.
+  
+For other entities and individuals: Dispose of unlabeled onions and any that are from the suspected source and thoroughly clean their containers/storage locations. Do not buy any of the above items sourced from the suspected location(s). 
+
+CDC’s General Guidelines to Prevent Salmonella Infection:
+1. Regularly clean your hands, cooking utensils, and surfaces.
+2. Keep raw foods away from meats (raw meat, poultry, and seafood)
+3. Use a cooking thermometer to ensure cooked foods are at a proper temperature - Beef/Veal/Lamb/Pork: 145 ⁰F, Fish: 145 ⁰F, Ground Meats: 160 ⁰F, Poultry: 165 ⁰F, etc.
+4. Refrigerate perishable food within 2 hours and always thaw in the refrigerator. Refrigerator should be 40 ⁰F or below and the freezer should be 0 ⁰F or below.
+
+Recommended Antibiotics: Macrolides and Carbapenems are recommended treatments for drug resistant Salmonella infections.
+
+## References:
+1. Marçais G, Delcher AL, Phillippy AM, Coston R, Salzberg SL, Zimin A. MUMmer4: A fast and versatile genome alignment system. PLoS Comput Biol. 2018;14(1):e1005944. Published 2018 Jan 26. doi:10.1371/journal.pcbi.1005944.
+2. R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/. 
+3. Raivo Kolde (2019). pheatmap: Pretty Heatmaps. R package version 1.0.12.https://CRAN.R-project.org/package=pheatmap. 
+4. Four Steps to Food Safety: Clean, Separate, Cook, Chill. Center for Disease Control and Prevention. Last updated March 4, 2022. Accessed April 21, 2022. https://www.cdc.gov/foodsafety/keep-food-safe.html. 
+5. CDC Food Safety Alert: Whole onions identified as the source of large ongoing Salmonella outbreak. Center for Disease Control and Prevention. Last updated October 21, 2021. Accessed April 21, 2022. https://www.cdc.gov/media/releases/2021/s1020-food-safety-salmonella.html.
