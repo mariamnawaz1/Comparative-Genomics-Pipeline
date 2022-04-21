@@ -171,6 +171,55 @@ plottree stringMLST.nwk -l 8.4 -o stringMLST
 ```
 The result is a png file, which is displayed below.
 ![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/43db7efd208c4e10e97a77b5b2f9cb7bd771d9ee/stringMLST_tree/test133_tree.png)
+ 
+ 
+##chewBBACA
+### Usage
+This is a gene-by-gene tool for MLST, compares the draft genome against a pre-defined schema using blastp. Its workflow is shown in the following figure including (1) schema creation with reference genomes, (2) allele calling using cg/wgMLST profile, (3) schema valuation.
+![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/39e8ca4b9eda92da38982661ba71bad8c4bf521f/chewBBACA/Workflow_chewBBACA.png) 
+
+### Installation:
+ ``` 
+pip3 install chewbbaca
+ ``` 
+#### Other options: 
+ ``` 
+ conda install -c bioconda blast	
+ ``` 
+ ``` 
+ conda install -c bioconda prodigal 
+ ``` 
+### Download database Salmonella enterica
+ ``` 
+chewBBACA.py DownloadSchema -sp 8 -sc 1 -o SE
+mv SE/* SE_db
+rm -r SE
+ ``` 
+
+### Allele calling
+``` 
+ chewBBACA.py AlleleCall -i "+fasta_dirname+" -g SE_db -o AC --cpu 4 --ptf SE_db/Salmonella_enterica.trn
+	mv AC/* ACresults
+	rm -r AC
+``` 
+	
+### Quality check
+  ``` 
+	chewBBACA.py TestGenomeQuality -i ACresults/results_alleles.tsv -n 1 -t 100 -s 5 -o QC
+ ``` 
+### Extract loci in 95% matrix
+ ``` 
+ chewBBACA.py ExtractCgMLST -i ACresults/results_alleles.tsv --r ACresults/RepeatedLoci.txt --g QC/removedGenomes.txt -o output --t 0
+	``` 
+### Vitualization:
+ ``` 
+ grapetree --profile output/cgMLST.tsv --method MSTreeV2 > result.nwk
+	plottree result.nwk -l 8.4 -o chewbbaca_tree
+ ``` 
+ #### Output of chewBBACA can also be vitualized by Phyloviz online using 
+### Output:
+
+
   
 ## AMRfinder
 
