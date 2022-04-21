@@ -142,6 +142,36 @@ Phylogenetic tree using the Maximum likelihood method. The internal nodel labels
 Phylogenetic tree using the Neighbor joining method:
 ![tree_tipAlleleCounts.NJ](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/tree_tipAlleleCounts.NJ.png)
 
+## StringMLST
+This is a kmer based tool of finding MLST from raw geneome reads. StringMLST predicts the Sequence Type from the 7 houseekeeping genes with assembly and alignment free.
+
+### Installation
+For stringMLST itself:
+``` 
+conda install -y -c bioconda stringmlst
+```
+For tree drawing:
+``` 
+pip3 install grapetree
+pip3 install plottree
+```
+### Usage:
+The first step is to download the database for the selected genome, and in this case Salmonella Enterica. To choose a kmer size, the size of the kmer is optimized when it is half the size of the raw input. The P flag is the prefix for the database files.
+ ``` 
+stringMLST.py --buildDB -k 133 -P Salmonella/se
+```
+The second step is to predict the sequence type of the isolates using the 7 house keeping genes. The list.txt file contains the location of the paired reads.
+ ``` 
+stringMLST.py --predict -l list.txt -P Salmonella/se -k 133 -o result.txt
+```
+The result of stringMLST will be stored in the output txt or tsv. Then use grapetree and plottree, a tree would be plotted.
+ ``` 
+grapetree --profile ./result.txt --method NJ > stringMLST.nwk
+plottree stringMLST.nwk -l 8.4 -o stringMLST
+```
+The result is a png file, which is displayed below.
+![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/43db7efd208c4e10e97a77b5b2f9cb7bd771d9ee/stringMLST_tree/test133_tree.png)
+  
 ## AMRfinder
 
 ![image](https://github.gatech.edu/storage/user/56758/files/f73bbbc7-abee-4958-b259-e713864c47a2)
