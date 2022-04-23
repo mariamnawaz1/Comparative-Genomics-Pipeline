@@ -221,14 +221,14 @@ grapetree --profile output/cgMLST.tsv --method MSTreeV2 > result.nwk
 plottree result.nwk -l 8.4 -o chewbbaca_tree
  ``` 
 	
-![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/chewBBACA/chewbbaca.png)
+![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/chewBBACA/chewbbaca.png)
 	
 Output of chewBBACA can also be visualized by online GUI website Phyloviz using cgMLST.csv as profile and create axuiliary manually.
 
 This is the output aligned color by locations.
-![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/chewBBACA/Unrooted%20tree_chewBBACA.png)
+![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/chewBBACA/Unrooted%20tree_chewBBACA.png)
 This is the output aligned color by food types.
-![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/chewBBACA/Unrooted%20tree_chewBBACA_foodtype.png)
+![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/chewBBACA/Unrooted%20tree_chewBBACA_foodtype.png)
 
 
   
