@@ -137,10 +137,10 @@ kSNP3 -in <in_list.txt> -outdir <outdir> -k <optimal_k-mer> -ML -NJ -CPU <number
 kSNP generates different form of phylogenetic tree files using Parsimony, Maximum likelihood (ML), and Neighbor joining (NJ) methods. Below are the tipAlleleCounts ML and NJ trees from the kSNP (step 5 above) visualized using [dendroscope](https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/).
 
 Phylogenetic tree using the Maximum likelihood method. The internal nodel labels show the number of SNP alleles that are present in all descendants of that node and nowhere else. Allele counts for branch tips are not shown. Strain names have been modified to show the strain specific allele counts:
-![tree_tipAlleleCounts.ML](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/tree_tipAlleleCounts.ML.png)
+![tree_tipAlleleCounts.ML](results/tree_tipAlleleCounts.ML.png)
 
 Phylogenetic tree using the Neighbor joining method:
-![tree_tipAlleleCounts.NJ](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/tree_tipAlleleCounts.NJ.png)
+![tree_tipAlleleCounts.NJ](results/tree_tipAlleleCounts.NJ.png)
 
 ## StringMLST
 This is a kmer based tool of finding MLST from raw geneome reads. StringMLST predicts the Sequence Type from the 7 houseekeeping genes with assembly and alignment free.
@@ -170,13 +170,13 @@ grapetree --profile ./result.txt --method NJ > stringMLST.nwk
 plottree stringMLST.nwk -l 8.4 -o stringMLST
 ```
 The result is a png file, which is displayed below.
-![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/43db7efd208c4e10e97a77b5b2f9cb7bd771d9ee/stringMLST_tree/test133_tree.png)
+![image](results/stringMLST_tree/test133_tree.png)
  
  
 ## chewBBACA
 ### Usage
 This is a gene-by-gene tool for MLST, compares the draft genome against a pre-defined schema using blastp. Its workflow is shown in the following figure including (1) schema creation with reference genomes, (2) allele calling using cg/wgMLST profile, (3) schema valuation.
-![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/39e8ca4b9eda92da38982661ba71bad8c4bf521f/chewBBACA/Workflow_chewBBACA.png) 
+![image](results/chewBBACA/Workflow_chewBBACA.png) 
 
 ### Installation:
  ``` 
@@ -221,14 +221,14 @@ grapetree --profile output/cgMLST.tsv --method MSTreeV2 > result.nwk
 plottree result.nwk -l 8.4 -o chewbbaca_tree
  ``` 
 	
-![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/chewBBACA/chewbbaca.png)
+![image](results/chewBBACA/chewbbaca.png)
 	
 Output of chewBBACA can also be visualized by online GUI website Phyloviz using cgMLST.csv as profile and create axuiliary manually.
 
 This is the output aligned color by locations.
-![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/chewBBACA/Unrooted%20tree_chewBBACA.png)
+![image](results/chewBBACA/Unrooted%20tree_chewBBACA.png)
 This is the output aligned color by food types.
-![image](https://github.gatech.edu/computationalgenomics2022/Team1-ComparativeGenomics/blob/main/results/chewBBACA/Unrooted%20tree_chewBBACA_foodtype.png)
+![image](results/chewBBACA/Unrooted%20tree_chewBBACA_foodtype.png)
 
 
   
