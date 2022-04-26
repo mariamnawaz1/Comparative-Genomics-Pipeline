@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # script to perform comparative genomics at whole genome, gene, and SNP level
-# command ./comparative.py -i /path/to/directory/having/assembled_contig_sequence/sub_directories -ok /path/to/output/directory -c core[optional; by default = 1] -ism path/of/the/raw/unassembled/sequence/directory
+# command ./comparative_pipeline.py -i /path/to/directory/having/assembled_contig_sequence/sub_directories -ok /path/to/output/directory -c core[optional; by default = 1] -ism path/of/the/raw/unassembled/sequence/directory
 
 import subprocess
 import sys
@@ -10,29 +10,21 @@ import argparse
 import os
 from multiprocessing import Pool
 
-parser = argparse.ArgumentParser(description="Comparative Genomics Analysis. Type comparative.py -help for options")
-parser.add_argument('-f','--f', help = "To run fastANI tool", type = str)
-parser.add_argument('-k','--k', help = "To run kSNP3", type = str)
-parser.add_argument('-c','--c', help = "To run chewBBACA", type = str)
-parser.add_argument('-s','--s', help = "To run stringMLST", type = str)
-parser.add_argument('-a','--a', help = "To run AMRFinderPlus", type = str)
-parser.add_argument('-m','--m', help = "To run mummer4", type = str)
+parser = argparse.ArgumentParser(description="Comparative Genomics Analysis. Type comparative_pipeline.py -help for options")
+parser.add_argument('-f','--fastani', help = "To run fastANI tool", type = str)
+parser.add_argument('-k','--ksnp', help = "To run kSNP3", type = str)
+parser.add_argument('-ch','--chewbbaca', help = "To run chewBBACA", type = str)
+parser.add_argument('-s','--stringmlst', help = "To run stringMLST", type = str)
+parser.add_argument('-a','--amrfinder', help = "To run AMRFinderPlus", type = str)
+parser.add_argument('-m','--mummer', help = "To run mummer4", type = str)
 parser.add_argument("-i", "--inputpath", help="path to the directory that has all the assembled genomes as sub-directories", required=True)
 parser.add_argument("-ok", "--outputpath", help="path to the directory that will store the results", required=True)
 parser.add_argument("-o","--output_file", type = str, help = "to specify output file")
 parser.add_argument("-c", "--cores", help="number of cores; by default = 1", type=str, default="1")
-#parser.add_argument("-osm", "--output_stringMLST", help="path to the directory that will store the results", required=True)
 parser.add_argument("-ism", "--input_stringMLST", help="path to the directory that has the data", required=True)
 
 
 args = parser.parse_args()
-
-# fastANI_input = fastANI_input + "/"
-# fastANI_input = fastANI_input + "/"
-
-# subprocess.run(['mkdir','fastANI'])
-# command1 = 'cd fastANI'
-# original_stdout = sys.stdout
 
 for files in os.listdir(args.i):
 	f = os.path.join(arg.i, files) + "/contigs.fasta"
@@ -48,7 +40,6 @@ def run_fastani(inputpath_file, output):
 
 
 # Function for AMRFinder:
-
 def run_amr(fasta, output):
 	output = output + "_amr.txt"
 	with open(fasta, 'r') as f:
@@ -61,7 +52,6 @@ def run_amr(fasta, output):
 
 
 # Function for MUMmer4
-
 def run_mummer(input_dir, output_dir, output_file, thread):
 
     if os.path.exists(output_dir) is False:
@@ -104,7 +94,7 @@ def run_mummer(input_dir, output_dir, output_file, thread):
     for i in range(len(matrix) - 1):
         matrix[i+1][i+1] = '100.0'
 
-    # runs the generated subprocess lists in parallel depending on the number of threads given in -t
+    # runs the generated subprocess lists in parallel depending on the number of threads given in -c
     pool = Pool(int(thread))
     pool.map(subprocess.call, subprocess_list)
     pool.close()
@@ -290,7 +280,7 @@ if __name__ == "__main__":
 		td = args.input_stringMLST
 		print("running stringMLST")
 		run_stringMLST(wd, td)
-	if args.c:
+	if args.ch:
 		print("running chewbbaca")
 		workingpath = os.getcwd()
 		chewbbaca(args.inputpath, workingpath)
